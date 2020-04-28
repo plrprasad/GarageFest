@@ -1,0 +1,116 @@
+<html>
+<head>
+<title>My first chart using FusionCharts Suite XT</title>
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<style type="text/css">
+.container{
+    width: 1100px; border: 10px; border-radius: 10px; background: darkslategrey; margin:50px auto; padding: 15px;
+}
+.col-md-10{width: 100%;}
+ a:hover,a:focus{
+    outline: none;
+    text-decoration: none;
+}
+.tab .nav-tabs{
+    background: #dde2e0;
+    padding: 5px 0;
+    text-align: center;
+}
+.tab .nav-tabs li{
+    margin-bottom: 0;
+    margin-right: 0;
+    float: none;
+    display: inline-block;
+}
+.tab .nav-tabs li a{
+    font-size: 14px;
+    color: #00779c;
+    background: #fafbfb;
+    margin-right: 5px;
+    padding: 20px 25px;
+    border-radius: 0;
+    
+}
+.tab .nav-tabs li a:hover{
+    color: #00779c;
+    border-color: transparent;
+}
+.tab .nav-tabs li a i{
+    font-size: 25px;
+    margin-right: 10px;
+}
+.tab .nav-tabs li.active a,
+.tab .nav-tabs li.active a:hover{
+    background: #00779c;
+    color: #fff;
+    border: 1px solid transparent;
+}
+.tab .tab-content{
+    font-size: 14px;
+    color: #00779c;
+    line-height: 30px;
+    background: #e7ecea;
+    padding: 20px 85px;
+}
+@media only screen and (max-width: 990px){
+    .tab .nav-tabs li a{ padding: 15px 10px; }
+    .tab .tab-content{ padding: 20px 25px; }
+}
+@media only screen and (max-width: 767px){
+    .tab .nav-tabs li a{ padding: 15px 5px; }
+}
+@media only screen and (max-width: 480px){
+    .tab .nav-tabs li{ width:100%; }
+}
+</style>
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+</head>
+<body>
+ <div class="container">
+    <div class="row">
+        <div class="col-md-10">
+            <div class="tab" role="tabpanel">
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs" role="tablist">
+                    <li><span><a href="index.html" style="background:none;"><img src="images/goBack.png" height="40px"/></a></span></li>
+                    <li role="presentation" class="active"><a href="#Section1" aria-controls="home" role="tab" data-toggle="tab"><i class="fa fa-envelope-o"></i> Credits</a></li>
+                    <li role="presentation"><a href="#Section2" aria-controls="profile" role="tab" data-toggle="tab"><i class="fa fa-cube"></i>Advice</a></li>
+                    <li role="presentation"><a href="#Section3" aria-controls="messages" role="tab" data-toggle="tab"><i class="fa fa-comment"></i>Fraud & Theft</a></li>
+                    <li role="presentation"><a href="#Section4" aria-controls="messages" role="tab" data-toggle="tab"><i class="fa fa-briefcase"></i>account </a></li>
+                    <li role="presentation"><a href="#Section5" aria-controls="messages" role="tab" data-toggle="tab"><i class="fa fa-mobile"></i>Section 5</a></li>
+                </ul>
+                <!-- Tab panes -->
+                <div class="tab-content tabs">
+                    <div role="tabpanel" class="tab-pane fade in active" id="Section1">
+                        <h3>Credits</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras nec urna aliquam, ornare eros vel, malesuada lorem. Nullam faucibus lorem at eros consectetur lobortis. Maecenas nec nibh congue, placerat sem id, rutrum velit. Phasellus porta enim at facilisis condimentum. Maecenas pharetra dolor vel elit tempor pellentesque sed sed eros. Aenean vitae mauris tincidunt, imperdiet orci semper, rhoncus ligula. Vivamus scelerisque.  </p>
+                    </div>
+                    <div role="tabpanel" class="tab-pane fade" id="Section2">
+                        <h3>Advice</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras nec urna aliquam, ornare eros vel, malesuada lorem. Nullam faucibus lorem at eros consectetur lobortis. Maecenas nec nibh congue, placerat sem id, rutrum velit. Phasellus porta enim at facilisis condimentum. Maecenas pharetra dolor vel elit tempor pellentesque sed sed eros. Aenean vitae mauris tincidunt, imperdiet orci semper, rhoncus ligula. Vivamus scelerisque. </p>
+                    </div>
+                    <div role="tabpanel" class="tab-pane fade" id="Section3">
+                        <h3>Fraud & Theft</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras nec urna aliquam, ornare eros vel, malesuada lorem. Nullam faucibus lorem at eros consectetur lobortis. Maecenas nec nibh congue, placerat sem id, rutrum velit. Phasellus porta enim at facilisis condimentum. Maecenas pharetra dolor vel elit tempor pellentesque sed sed eros. Aenean vitae mauris tincidunt, imperdiet orci semper, rhoncus ligula. Vivamus scelerisque. </p>
+                    </div>
+                    <div role="tabpanel" class="tab-pane fade" id="Section4">
+                        <h3>Section 4</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras nec urna aliquam, ornare eros vel, malesuada lorem. Nullam faucibus lorem at eros consectetur lobortis. Maecenas nec nibh congue, placerat sem id, rutrum velit. Phasellus porta enim at facilisis condimentum. Maecenas pharetra dolor vel elit tempor pellentesque sed sed eros. Aenean vitae mauris tincidunt, imperdiet orci semper, rhoncus ligula. Vivamus scelerisque. </p>
+                    </div>
+                    <div role="tabpanel" class="tab-pane fade" id="Section5">
+                        <h3>Section 5</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras nec urna aliquam, ornare eros vel, malesuada lorem. Nullam faucibus lorem at eros consectetur lobortis. Maecenas nec nibh congue, placerat sem id, rutrum velit. Phasellus porta enim at facilisis condimentum. Maecenas pharetra dolor vel elit tempor pellentesque sed sed eros. Aenean vitae mauris tincidunt, imperdiet orci semper, rhoncus ligula. Vivamus scelerisque. </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

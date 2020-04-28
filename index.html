@@ -1,0 +1,277 @@
+<html>
+<head>
+<title>Smart Link</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="material-gauge.css">
+
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+
+<style type="text/css">
+ .pricingTable{
+    margin: 0 -15px;
+    background: darkslategrey;
+    text-align: center;
+    border-top: 4px solid #8c97d2; border-radius: 9px; margin-bottom: 15px !important;
+}
+.pricingTable .title{
+    font-size: 40px;
+    color: #8c97d2;    
+    margin: 15px 0 25px;
+}
+.pricingTable .price-value{
+    width: 190px;
+    height: 190px;
+    border-radius: 50%;
+    margin: 0 auto 30px;
+    background-image: linear-gradient(#d5d5d5, #fff 50%, #8c97d2 50%, #8c97d2);
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.3) inset, 0 2px 5px rgba(0, 0, 0, 0.3) inset;
+}
+.pricingTable .amount{
+    display: inline-block;
+    font-size: 50px;
+    color: #333;
+    line-height: 1;
+    margin-top: 30px;
+    transition: all 0.4s ease 0s;
+}
+.price-value:hover .amount{
+    margin-top: 35px;
+}
+.pricingTable .month{
+    display: block;
+    font-size: 25px;
+    font-weight: 600;
+    color: #535f9f;
+    line-height: 1;
+    text-transform: uppercase;
+    margin-top: 35px;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4), 0 -1px 0 rgba(0, 0, 0, 0.8);
+}
+.pricingTable .pricing-content{
+    list-style: none;
+    padding:0;
+    margin: 0 10% 25px 10%;
+}
+.pricingTable .pricing-content li{
+    padding: 7px 0;
+    font-size: 15px;
+    color: #fff;
+    border-bottom: 1px solid #22313a;
+}
+.pricingTable .pricing-content li i{ margin-right: 10px; }
+.pricingTable .pricingTable-signup{
+    display: block;
+    padding: 6px 0;
+    font-size: 15px;
+    color: #8c97d2;
+    letter-spacing: 1px;
+    line-height: 30px;
+    text-transform: uppercase;
+    border-top: 1px solid #8c97d2;
+    z-index: 1;
+    position: relative;
+    transition: all 0.4s ease 0s;
+}
+.pricingTable .pricingTable-signup:hover{
+    background: #8c97d2;
+    color: #fff;
+}
+.pricingTable .pricingTable-signup:before,
+.pricingTable .pricingTable-signup:after{
+    content: "";
+    width: 0;
+    height: 3px;
+    background: #fff;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    transition: all 0.4s ease 0s;
+}
+.pricingTable .pricingTable-signup:after{
+    top: auto;
+    left: auto;
+    bottom: 5px;
+    right: 5px;
+}
+.pricingTable .pricingTable-signup:hover:before,
+.pricingTable .pricingTable-signup:hover:after{
+    width: 50%;
+}
+.pricingTable.red{
+    background: darkslategrey;
+    border-top-color: #f7959f; border-left-color:#fff; border-left:0px solid #fff; box-shadow: -5px 0px 5px #cdcdcd;
+}
+.pricingTable.pink .price-value{ background-image: linear-gradient(#d5d5d5, #fff 50%, #f7959f 50%, #f7959f); }
+.pricingTable.pink .title{ color: #f7959f; }
+.pricingTable.pink .month{ color: #cc6771; }
+.pricingTable.pink .pricingTable-signup{
+    color: #f7959f;
+    border-top-color: #f7959f;
+}
+.pricingTable.pink .pricingTable-signup:hover{
+    background: #f7959f;
+    color: #fff;
+}
+.linkAnAccount{
+    display: inline-block;
+    padding: 11px 45px;
+    font-size: 14px;
+    cursor: hand;
+    color: #fff;
+    
+    box-shadow: 3px 3px 10px 0 rgba(0, 0, 0, 0.08);
+    border: 2px solid #3bb4e5;
+    border-radius: 9px;
+    perspective: 300px;
+    z-index: 1;
+    position: relative;
+    transition: all 0.3s ease 0s;
+}
+.linkAnAccount:hover{ color: #3bb4e5; font-weight: bold; text-decoration: none; }
+.linkAnAccount:before{
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: #3bb4e5;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transform-origin: left center 0;
+    transition: all 0.3s ease 0s;
+}
+.linkAnAccount:hover:before{
+    transform: rotateY(100deg);
+}
+@media only screen and (max-width: 990px){
+    .pricingTable{ margin-bottom: 30px; }
+}
+
+.gauge__marker{
+
+    background-color: none !important;
+}
+</style>
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+</head>
+<body>
+ <div class="container" style="margin-top: 50px;">
+    <div class="row">
+        <div class="col-md-6 col-sm-8">
+            <div class="pricingTable">
+                <h3 class="title">Daily Risk Monitor</h3>
+                <!--<div class="price-value">
+                    <span class="amount">10%</span>
+                    <span class="month">Risks</span>
+                </div>
+            -->
+                <div id="chartContainer" style="height: 230px; width: 400px; background-color:darkslategrey; margin-left: 100px;margin-bottom: 10px;"></div>
+                <!--<ul class="pricing-content">
+                    <li><i class="fa fa-share-square-o"></i>50 GB Disk Space</li>
+                    <li><i class="fa fa-share-square-o"></i>50 Email Accounts</li>
+                    <li><i class="fa fa-share-square-o"></i>50 GB Monthly Bandwidth</li>
+                    <li><i class="fa fa-share-square-o"></i>10 Subdomains</li>
+                    <li><i class="fa fa-share-square-o"></i>15 Domains</li>
+                </ul> -->
+                <a class="pricingTable-signup" href="#">Bank1</a>
+                <a class="pricingTable-signup" href="#">Bank2</a>
+                <a class="pricingTable-signup" href="#">Bank3</a>
+                <a class="pricingTable-signup" href="#">Bank4</a>
+                
+            </div>
+        </div>
+ 
+        <div class="col-md-6 col-sm-6">
+            <div class="pricingTable red">
+                <h3 class="title"> Credit Score</h3>
+               
+
+        <div class="gauge gauge--liveupdate" id="gauge" style="height: 220px; margin-top: 45px;">
+            <div class="gauge__container">
+                <div class="gauge__marker"  style="background-color: ;"></div>
+                <div class="gauge__background"></div>
+                <div class="gauge__center"></div>
+
+                <div class="gauge__data"></div>
+                <div class="gauge__needle"></div>
+            </div>
+            <div class="gauge__labels mdl-typography__headline">
+                <span class="gauge__label--low" style="color: #fff;font-weight: bold;">0</span>
+                <span class="gauge__label--spacer" style="color: #fff;font-weight: bold;">500</span>
+                <span class="gauge__label--high" style="color: #fff;font-weight: bold;">1000</span>
+            </div>
+        </div>
+        
+                <!--<ul class="pricing-content">
+                    <li><i class="fa fa-share-square-o"></i>60 GB Disk Space</li>
+                    <li><i class="fa fa-share-square-o"></i>60 Email Accounts</li>
+                    <li><i class="fa fa-share-square-o"></i>60 GB Monthly Bandwidth</li>
+                    <li><i class="fa fa-share-square-o"></i>15 Subdomains</li>
+                    <li><i class="fa fa-share-square-o"></i>20 Domains</li>
+                </ul> -->
+                <a class="pricingTable-signup" href="#">Bank1</a>
+                <a class="pricingTable-signup" href="#">Bank2</a>
+                <a class="pricingTable-signup" href="#">Bank3</a>
+                <a class="pricingTable-signup" href="#">Bank4</a>
+               
+            </div>
+        </div>
+
+    </div>
+    <!-- <div class="row" style="text-align: right;"><span ><a class="linkAnAccount">Add & Manage Account</a></span></div> -->
+    <div class="row">
+        <span style="float: right;"><a class="linkAnAccount">Add & Manage Account</a></span>
+        <span style="float: left;"><a class="linkAnAccount" href="healthPage.html">Health Score</a></span>
+    </div>
+    <script src="material-gauge.js"></script>
+        <script>
+
+            var gauge = new Gauge(document.getElementById("gauge"));
+
+            gauge.value(0.65);
+
+        </script>
+    <script>
+window.onload = function () {
+
+var chart = new CanvasJS.Chart("chartContainer", {
+    backgroundColor: "darkslategrey",
+    legend:{
+        cursor: "pointer",
+        itemclick: explodePie
+    },
+    data: [{
+        type: "doughnut",
+        innerRadius: 50,
+        
+        toolTipContent: "<b>{name}</b>: ${y} (#percent%)",
+        
+        dataPoints: [
+            { y: 450, name: "Food" },
+            { y: 120, name: "Insurance" },
+            { y: 300, name: "Travelling" },
+            { y: 800, name: "Housing" },
+            { y: 150, name: "Education" },
+            { y: 150, name: "Shopping"},
+            { y: 250, name: "Others" }
+        ]
+    }]
+});
+chart.render();
+
+function explodePie (e) {
+    if(typeof (e.dataSeries.dataPoints[e.dataPointIndex].exploded) === "undefined" || !e.dataSeries.dataPoints[e.dataPointIndex].exploded) {
+        e.dataSeries.dataPoints[e.dataPointIndex].exploded = true;
+    } else {
+        e.dataSeries.dataPoints[e.dataPointIndex].exploded = false;
+    }
+    e.chart.render();
+}
+
+}
+</script>
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+</body>
+</html>
